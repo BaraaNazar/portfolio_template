@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="flex-row">
-      <aside class="aside-container flex-col">
+      <aside class="sidebar">
         <section>
           <picture>
             <img
@@ -16,29 +16,32 @@
               alt="profile image of the owner"
               width="200px"
               height="auto"
+              class="border-radius-50"
             />
           </picture>
         </section>
         <section>
-          <nav>
-            <li class="width-full"><a href="#">Home</a></li>
-            <li class="width-full"><a href="#">Projects</a></li>
-            <li class="width-full"><a href="#">Blog</a></li>
-            <li class="width-full"><a href="#">CV</a></li>
-            <li class="width-full"><a href="#">Contact</a></li>
+          <nav class="list-style-none">
+            <li class="width-full sidebar-links">
+              <a href="#">Home</a>
+            </li>
+            <li class="width-full sidebar-links"><a href="#">Projects</a></li>
+            <li class="width-full sidebar-links"><a href="#">Blog</a></li>
+            <li class="width-full sidebar-links"><a href="#">CV</a></li>
+            <li class="width-full sidebar-links"><a href="#">Contact</a></li>
           </nav>
         </section>
         <section>
-          <ul>
-            <li><a href="#">G</a></li>
-            <li><a href="#">T</a></li>
-            <li><a href="#">L</a></li>
-            <li><a href="#">W</a></li>
+          <ul class="flex-row list-style-none justify-center">
+            <li><a class="width-full sidebar-links" href="#">G</a></li>
+            <li><a class="width-full sidebar-links" href="#">T</a></li>
+            <li><a class="width-full sidebar-links" href="#">L</a></li>
+            <li><a class="width-full sidebar-links" href="#">W</a></li>
           </ul>
         </section>
       </aside>
-      <div class="overflow-y-scroll">
-        <section class="flex-col overflow-y-scroll">
+      <div class="page-content">
+        <section class="flex-col">
           <p>Hey there 👋</p>
           <h1>I'm Baraa Nazar</h1>
           <h3>Frontend Developer</h3>

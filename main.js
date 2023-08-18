@@ -12,3 +12,8 @@ let blogName = document.querySelectorAll('.blogName');
 let blogDescription = document.querySelectorAll('.blogDescription');
 let blogLink = document.querySelectorAll('.blogLink');
 let blogImg = document.querySelectorAll('.blogImg');
+
+userName.textContent = userInfo.name;
+userJob.textContent = userInfo.job;
+userBio.textContent = userInfo.bio;
+userImg.src = userInfo.userImg;

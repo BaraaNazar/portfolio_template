@@ -9,6 +9,12 @@ fetch('./userInfo.json')
     const userImg = document.querySelector('.userImg');
     userImg.src = data.userImg;
 
+    // contact links
+    let githubLink = document.querySelector('.github');
+    let linkedinLink = document.querySelector('.linkedin');
+    githubLink.href = data.github;
+    linkedinLink.href = data.linkedIn;
+
     // Update the iframe source and link
     cvLink.href = data.cv.href;
   })

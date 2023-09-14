@@ -4,6 +4,8 @@ let userName = document.querySelector('.userName');
 let userJob = document.querySelector('.userJob');
 let userBio = document.querySelector('.userBio');
 let userImg = document.querySelector('.userImg');
+let githubLink = document.querySelector('.github');
+let linkedinLink = document.querySelector('.linkedin');
 let projectNameElements = document.querySelectorAll('.projectName');
 let projectDescriptionElements = document.querySelectorAll(
   '.projectDescription'
@@ -20,6 +22,8 @@ userName.textContent = userInfo.name;
 userJob.textContent = userInfo.job;
 userBio.textContent = userInfo.bio;
 userImg.src = userInfo.userImg;
+githubLink.href = userInfo.github;
+linkedinLink.href = userInfo.linkedIn;
 
 projectNameElements.forEach((e, i) => {
   if (i < userInfo.projects.length) {

@@ -93,3 +93,11 @@
 .link:active {
   background-color: #f2f2f2;
 }
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.projectImg {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}

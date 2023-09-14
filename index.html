@@ -9,7 +9,20 @@
   </head>
   <body>
     <main class="flex-row">
-      <aside class="sidebar flex-col align-center">
+      <div id="sidebar-container"></div>
+      <script>
+        // Load the sidebar using JavaScript
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebarContent = './aside.html'; // Replace with the path to your sidebar file
+
+        fetch(sidebarContent)
+          .then((response) => response.text())
+          .then((html) => {
+            sidebarContainer.innerHTML = html;
+          });
+      </script>
+
+      <!-- <aside class="sidebar flex-col align-center justify-evenly">
         <section>
           <picture>
             <img
@@ -24,13 +37,13 @@
         <section>
           <nav class="list-style-none flex-start">
             <li class="width-full sidebar-links link active">
-              <a class="link-style-none" href="#">Home</a>
+              <a class="link-style-none" href="/">Home</a>
             </li>
             <li class="width-full sidebar-links link">
-              <a class="link-style-none" href="#">Projects</a>
+              <a class="link-style-none" href="./projects.html">Projects</a>
             </li>
             <li class="width-full sidebar-links link">
-              <a class="link-style-none" href="#">Blog</a>
+              <a class="link-style-none" href="./blogs.html">Blog</a>
             </li>
             <li class="width-full sidebar-links link">
               <a class="link-style-none" href="#">CV</a>
@@ -107,7 +120,7 @@
             </li>
           </ul>
         </section>
-      </aside>
+      </aside> -->
       <div class="page-content padding-l-10">
         <section class="flex-col">
           <p>Hey there 👋</p>

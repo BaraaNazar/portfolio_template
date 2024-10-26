@@ -1,43 +1,50 @@
-Portfolio Template Website
+# React + TypeScript + Vite
 
-Welcome to the Portfolio Template Website! 
-This template is designed to help you create an impressive and professional online portfolio to showcase your skills, projects, and achievements. Whether you're a designer, developer, artist, writer, or any creative professional, this template can be easily forked and customized to suit your needs.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Getting Started
-Follow these steps to get started with your portfolio website:
+Currently, two official plugins are available:
 
-Fork the Repository: Begin by forking this repository to your GitHub account. This will create a copy of the template that you can modify and customize without affecting the original template.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Customize Content: Open the project folder in your preferred code editor. Replace the placeholder content with your information, including your name, bio, projects, images, and links.
+## Expanding the ESLint configuration
 
-Modify Styles: Customize the styling to match your brand. The CSS files are located in the styles folder. Feel free to adjust fonts, colors, spacing, and layout to create a unique look and feel.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-Add Projects: In the projects or portfolio section, you can add project details. Each project could have a title, description, images, technologies used, and links to the project (such as GitHub repository or live demo).
+- Configure the top-level `parserOptions` property like this:
 
-Contact Information: Update the contact section with your email, social media links, and any other preferred method of communication.
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-Testing: Before deploying, make sure to test your portfolio website on various devices and browsers to ensure a responsive and consistent user experience.
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-Deployment
-You have several options for deploying your portfolio website:
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-GitHub Pages: You can host your portfolio website for free on GitHub Pages. Simply push your changes to the forked repository, and enable GitHub Pages in the repository settings.
-
-Netlify: Netlify is another popular option for static site hosting. You can connect your GitHub repository to Netlify for automatic deployments.
-
-Custom Domain: If you have a custom domain, you can configure it to point to your deployed portfolio website for a professional touch.
-
-Features
-Responsive Design: The template is designed to be responsive and adapt to various screen sizes, ensuring a seamless experience for visitors on both desktop and mobile devices.
-
-Project Showcase: The portfolio template includes a dedicated section to showcase your projects with details, images, and links.
-
-Customization: The template's code and styles are well-organized and documented, making it easy for you to customize and tailor it to your preferences.
-
-Support and Contribution
-If you encounter any issues or have suggestions for improvements, open an issue or create a pull request in the original repository. This template is meant to be a collaborative effort, and your contributions are welcome!
-
-License
-This portfolio template is released under the MIT License. You are free to use, modify, and distribute the code as per the terms of the license.
-
-Thank you for choosing the Portfolio Template Website. We hope this template helps you create a stunning online portfolio that effectively showcases your talents and accomplishments. Good luck!
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

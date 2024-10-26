@@ -2,98 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2' y='2' width='20' height='20' rx='4' fill='%2300a4cc'/%3E%3Cpath d='M8 6h8v2H8V6zm0 4h6v2H8v-2zm0 4h5v2H8v-2z' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='18' r='4' fill='%231d4ed8'/%3E%3Ctext x='12' y='20.5' fill='%23ffffff' font-size='7' font-family='Arial' font-weight='bold' text-anchor='middle'%3ECV%3C/text%3E%3C/svg%3E"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./main.js" defer></script>
-    <title>Baraa Nazar</title>
+    <title>Portfolio</title>
   </head>
   <body>
-    <main class="flex-row">
-      <div id="sidebar-container"></div>
-      <script>
-        // Load the sidebar using JavaScript
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebarContent = './aside.html'; // Replace with the path to your sidebar file
-
-        fetch(sidebarContent)
-          .then((response) => response.text())
-          .then((html) => {
-            sidebarContainer.innerHTML = html;
-          });
-      </script>
-
-      <div class="page-content padding-l-10">
-        <section class="flex-col">
-          <p>Hey there 👋</p>
-          <h1>I'm <span class="userName capatalize"></span></h1>
-          <h3 class="userJob capatalize"></h3>
-          <p class="userBio"></p>
-        </section>
-        <section>
-          <h2>My Last Projects</h2>
-          <ul class="list-style-none">
-            <li class="">
-              <a href="#" class="projectLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="project1" class="projectImg" />
-                </picture>
-                <h4 class="projectName capatalize"></h4>
-                <p class="projectDescription"></p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="projectLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="project2" class="projectImg" />
-                </picture>
-                <h4 class="projectName capatalize"></h4>
-                <p class="projectDescription"></p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="projectLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="project3" class="projectImg" />
-                </picture>
-                <h4 class="projectName capatalize"></h4>
-                <p class="projectDescription"></p>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>My Latest Blogs</h2>
-          <ul class="list-style-none">
-            <li>
-              <a href="#" class="blogLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="blogImg1" class="blogImg" />
-                </picture>
-                <h4 class="blogName"></h4>
-                <p class="blogDescription"></p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="blogLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="blogImg2" class="blogImg" />
-                </picture>
-                <h4 class="blogName"></h4>
-                <p class="blogDescription"></p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="blogLink link-style-none">
-                <picture>
-                  <img src="" width="200px" alt="blogImg3" class="blogImg" />
-                </picture>
-                <h4 class="blogName"></h4>
-                <p class="blogDescription"></p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

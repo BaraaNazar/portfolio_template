@@ -17,7 +17,7 @@ function Section({ sectionTitle, description, contents }: SectionProps) {
   return (
     <Card className='border-none shadow-none p-0 m-0'>
       <CardHeader>
-        <CardTitle className='text-md md:text-lg border-b-2 border-black'>
+        <CardTitle className='text-xs md:text-md md:text-lg border-b-2 border-black'>
           {sectionTitle}
         </CardTitle>
       </CardHeader>

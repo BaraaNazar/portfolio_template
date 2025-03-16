@@ -23,7 +23,7 @@ function Home() {
       contents: null,
     },
     {
-      sectionTitle: 'Contact',
+      sectionTitle: 'Contact Me',
       description: [
         'Erbil, Iraq',
         'baraa.nazar.ph@gmail.com',
